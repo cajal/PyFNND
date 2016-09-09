@@ -2,7 +2,6 @@ from __future__ import absolute_import
 import numpy as np
 from scipy import signal
 from ._fnndeconv import deconvolve
-from . import plotting
 
 
 def make_fake_movie(nframes, mask_shape=(64, 64), mask_center=None,
@@ -74,6 +73,7 @@ def make_fake_movie(nframes, mask_shape=(64, 64), mask_center=None,
 
 
 def make_demo_plots(seed=0):
+    from . import plotting
 
     # single pixel
     F, c, n, theta = make_fake_movie(1000, dt=0.02, mask_shape=(1, 1),
